@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Recent Quotes</h6>
+                </div>
+                <div class="card-body">
+                  {% for i in object_list %}
+                    <ul>
+                    <li><a href="{% url 'quote_detail' i.id %}">{{i.o_id}} : {{i.customer_name}} : {{i.lead_name}}</a></li>
+                        </ul>
+                    {% endfor %}
+                </div>
+              </div>
+
+
+{% endblock %}
